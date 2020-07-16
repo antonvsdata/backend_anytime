@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/players
+Content-Type: application/json
+
+{
+    "name": "Anton Klåvus",
+    "number": "30",
+    "active": true,
+    "position": ["defender"],
+    "joined": "2020",
+    "born": "1993"
+}
