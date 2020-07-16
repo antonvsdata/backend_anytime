@@ -55,11 +55,32 @@ app.get("/api/players/position/:position", (req, res, next) => {
 
 // Add player
 app.post("/api/players", (req, res, next) => {
-  Players.create(req.body)
-    .then((player) => {
-      res.json(player);
-    })
-    .catch((error) => next(error));
+  const player = { ...req.body };
+  let number_found = false;
+  if (player.active) {
+    // Check that no active player has the same number
+    Players.find({ active: true }).then((players) => {
+      const numbers = players.map((p) => p.number);
+      if (numbers.includes(player.number)) {
+        res
+          .status(400)
+          .send({ error: "number already used by another active player" });
+        number_found = true;
+      } else {
+        Players.create(player)
+          .then((player) => {
+            res.json(player);
+          })
+          .catch((error) => next(error));
+      }
+    });
+  } else {
+    Players.create(player)
+      .then((player) => {
+        res.json(player);
+      })
+      .catch((error) => next(error));
+  }
 });
 
 // Retire player
