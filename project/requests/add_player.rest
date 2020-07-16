@@ -4,7 +4,7 @@ Content-Type: application/json
 {
     "name": "Anton Klåvus",
     "number": "30",
-    "active": false,
+    "active": true,
     "position": ["defender"],
     "joined": "2020",
     "born": "1993"

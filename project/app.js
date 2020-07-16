@@ -14,7 +14,14 @@ let db = mongoose.connection;
 const Players = require("./models/players");
 
 app.get("/", (req, res) => {
-  res.send("This site is API only, please use /api/players!");
+  Players.find({})
+    .then((players) => {
+      const nactive = players.filter((p) => p.active).length;
+      res.send(
+        `The team currently has ${players.length} players of which ${nactive} are currently active. To see details, use /api/players.`
+      );
+    })
+    .catch((error) => next(error));
 });
 
 // PLAYERS

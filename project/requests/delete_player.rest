@@ -1,1 +1,1 @@
-DELETE http://localhost:3000/api/players/id/5f1e970bb4f892b0
+DELETE http://localhost:3000/api/players/id/5f1036950a64043748326b7c

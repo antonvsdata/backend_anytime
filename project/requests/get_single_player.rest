@@ -1,1 +1,1 @@
-GET http://localhost:3000/api/players/id/5ef990bb219b944e6f95be26
+GET http://localhost:3000/api/players/id/5f0ffbb1d0b9092ce0eccfb7
