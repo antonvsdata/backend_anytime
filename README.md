@@ -34,3 +34,5 @@ Here is a list of the available API requests:
 | PUT     | /api/players/retire/:id         | Make a player retire (move to another team etc.)       |
 | PUT     | /api/players/activate/:id       | Activate a player (return from retiremet/another team) |
 | PUT     | /api/players/id/:id             | Update any information                                 |
+
+To see API in action, see [the video on YouTube](https://youtu.be/taxMOufmrik).
